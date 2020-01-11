@@ -1,0 +1,3 @@
+/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/rebuild_cache.dir
+/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/main.dir
+/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/edit_cache.dir

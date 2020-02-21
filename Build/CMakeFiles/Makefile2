@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/nikto_b/Documents/C++/scheduler/Build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/main.dir/all
+all: CMakeFiles/scheduler.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,148 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/scheduler.dir/clean
+clean: CMakeFiles/scheduler-atmega2560.elf.dir/clean
+clean: CMakeFiles/upload_scheduler.dir/clean
+clean: CMakeFiles/upload_scheduler_eeprom.dir/clean
+clean: CMakeFiles/disassemble_scheduler.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.dir
+# Target rules for target CMakeFiles/scheduler.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles --progress-num=1,2 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
+CMakeFiles/scheduler.dir/all: CMakeFiles/scheduler-atmega2560.elf.dir/all
+	$(MAKE) -f CMakeFiles/scheduler.dir/build.make CMakeFiles/scheduler.dir/depend
+	$(MAKE) -f CMakeFiles/scheduler.dir/build.make CMakeFiles/scheduler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles --progress-num=1,2,3 "Built target scheduler"
+.PHONY : CMakeFiles/scheduler.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+CMakeFiles/scheduler.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/scheduler.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
+.PHONY : CMakeFiles/scheduler.dir/rule
 
 # Convenience name for target.
-main: CMakeFiles/main.dir/rule
+scheduler: CMakeFiles/scheduler.dir/rule
 
-.PHONY : main
+.PHONY : scheduler
 
 # clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
+CMakeFiles/scheduler.dir/clean:
+	$(MAKE) -f CMakeFiles/scheduler.dir/build.make CMakeFiles/scheduler.dir/clean
+.PHONY : CMakeFiles/scheduler.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/scheduler-atmega2560.elf.dir
+
+# All Build rule for target.
+CMakeFiles/scheduler-atmega2560.elf.dir/all:
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/depend
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles --progress-num=4,5,6 "Built target scheduler-atmega2560.elf"
+.PHONY : CMakeFiles/scheduler-atmega2560.elf.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/scheduler-atmega2560.elf.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/scheduler-atmega2560.elf.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 0
+.PHONY : CMakeFiles/scheduler-atmega2560.elf.dir/rule
+
+# Convenience name for target.
+scheduler-atmega2560.elf: CMakeFiles/scheduler-atmega2560.elf.dir/rule
+
+.PHONY : scheduler-atmega2560.elf
+
+# clean rule for target.
+CMakeFiles/scheduler-atmega2560.elf.dir/clean:
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/clean
+.PHONY : CMakeFiles/scheduler-atmega2560.elf.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/upload_scheduler.dir
+
+# All Build rule for target.
+CMakeFiles/upload_scheduler.dir/all: CMakeFiles/scheduler-atmega2560.elf.dir/all
+	$(MAKE) -f CMakeFiles/upload_scheduler.dir/build.make CMakeFiles/upload_scheduler.dir/depend
+	$(MAKE) -f CMakeFiles/upload_scheduler.dir/build.make CMakeFiles/upload_scheduler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles --progress-num=7,8 "Built target upload_scheduler"
+.PHONY : CMakeFiles/upload_scheduler.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/upload_scheduler.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/upload_scheduler.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 0
+.PHONY : CMakeFiles/upload_scheduler.dir/rule
+
+# Convenience name for target.
+upload_scheduler: CMakeFiles/upload_scheduler.dir/rule
+
+.PHONY : upload_scheduler
+
+# clean rule for target.
+CMakeFiles/upload_scheduler.dir/clean:
+	$(MAKE) -f CMakeFiles/upload_scheduler.dir/build.make CMakeFiles/upload_scheduler.dir/clean
+.PHONY : CMakeFiles/upload_scheduler.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/upload_scheduler_eeprom.dir
+
+# All Build rule for target.
+CMakeFiles/upload_scheduler_eeprom.dir/all: CMakeFiles/scheduler-atmega2560.elf.dir/all
+	$(MAKE) -f CMakeFiles/upload_scheduler_eeprom.dir/build.make CMakeFiles/upload_scheduler_eeprom.dir/depend
+	$(MAKE) -f CMakeFiles/upload_scheduler_eeprom.dir/build.make CMakeFiles/upload_scheduler_eeprom.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles --progress-num=9,10 "Built target upload_scheduler_eeprom"
+.PHONY : CMakeFiles/upload_scheduler_eeprom.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/upload_scheduler_eeprom.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/upload_scheduler_eeprom.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 0
+.PHONY : CMakeFiles/upload_scheduler_eeprom.dir/rule
+
+# Convenience name for target.
+upload_scheduler_eeprom: CMakeFiles/upload_scheduler_eeprom.dir/rule
+
+.PHONY : upload_scheduler_eeprom
+
+# clean rule for target.
+CMakeFiles/upload_scheduler_eeprom.dir/clean:
+	$(MAKE) -f CMakeFiles/upload_scheduler_eeprom.dir/build.make CMakeFiles/upload_scheduler_eeprom.dir/clean
+.PHONY : CMakeFiles/upload_scheduler_eeprom.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/disassemble_scheduler.dir
+
+# All Build rule for target.
+CMakeFiles/disassemble_scheduler.dir/all: CMakeFiles/scheduler-atmega2560.elf.dir/all
+	$(MAKE) -f CMakeFiles/disassemble_scheduler.dir/build.make CMakeFiles/disassemble_scheduler.dir/depend
+	$(MAKE) -f CMakeFiles/disassemble_scheduler.dir/build.make CMakeFiles/disassemble_scheduler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles --progress-num= "Built target disassemble_scheduler"
+.PHONY : CMakeFiles/disassemble_scheduler.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/disassemble_scheduler.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/disassemble_scheduler.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles 0
+.PHONY : CMakeFiles/disassemble_scheduler.dir/rule
+
+# Convenience name for target.
+disassemble_scheduler: CMakeFiles/disassemble_scheduler.dir/rule
+
+.PHONY : disassemble_scheduler
+
+# clean rule for target.
+CMakeFiles/disassemble_scheduler.dir/clean:
+	$(MAKE) -f CMakeFiles/disassemble_scheduler.dir/build.make CMakeFiles/disassemble_scheduler.dir/clean
+.PHONY : CMakeFiles/disassemble_scheduler.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

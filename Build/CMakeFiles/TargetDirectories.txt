@@ -1,3 +1,7 @@
 /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/rebuild_cache.dir
-/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/main.dir
 /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/edit_cache.dir
+/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/scheduler.dir
+/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/scheduler-atmega2560.elf.dir
+/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/upload_scheduler.dir
+/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/upload_scheduler_eeprom.dir
+/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/disassemble_scheduler.dir

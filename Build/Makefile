@@ -111,26 +111,78 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named scheduler
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+scheduler: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 scheduler
+.PHONY : scheduler
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+scheduler/fast:
+	$(MAKE) -f CMakeFiles/scheduler.dir/build.make CMakeFiles/scheduler.dir/build
+.PHONY : scheduler/fast
 
-Src/main.o: Src/main.cpp.o
+#=============================================================================
+# Target rules for targets named scheduler-atmega2560.elf
 
-.PHONY : Src/main.o
+# Build rule for target.
+scheduler-atmega2560.elf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 scheduler-atmega2560.elf
+.PHONY : scheduler-atmega2560.elf
+
+# fast build rule for target.
+scheduler-atmega2560.elf/fast:
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/build
+.PHONY : scheduler-atmega2560.elf/fast
+
+#=============================================================================
+# Target rules for targets named upload_scheduler
+
+# Build rule for target.
+upload_scheduler: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 upload_scheduler
+.PHONY : upload_scheduler
+
+# fast build rule for target.
+upload_scheduler/fast:
+	$(MAKE) -f CMakeFiles/upload_scheduler.dir/build.make CMakeFiles/upload_scheduler.dir/build
+.PHONY : upload_scheduler/fast
+
+#=============================================================================
+# Target rules for targets named upload_scheduler_eeprom
+
+# Build rule for target.
+upload_scheduler_eeprom: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 upload_scheduler_eeprom
+.PHONY : upload_scheduler_eeprom
+
+# fast build rule for target.
+upload_scheduler_eeprom/fast:
+	$(MAKE) -f CMakeFiles/upload_scheduler_eeprom.dir/build.make CMakeFiles/upload_scheduler_eeprom.dir/build
+.PHONY : upload_scheduler_eeprom/fast
+
+#=============================================================================
+# Target rules for targets named disassemble_scheduler
+
+# Build rule for target.
+disassemble_scheduler: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 disassemble_scheduler
+.PHONY : disassemble_scheduler
+
+# fast build rule for target.
+disassemble_scheduler/fast:
+	$(MAKE) -f CMakeFiles/disassemble_scheduler.dir/build.make CMakeFiles/disassemble_scheduler.dir/build
+.PHONY : disassemble_scheduler/fast
+
+Src/main.obj: Src/main.cpp.obj
+
+.PHONY : Src/main.obj
 
 # target to build an object file
-Src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Src/main.cpp.o
-.PHONY : Src/main.cpp.o
+Src/main.cpp.obj:
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/Src/main.cpp.obj
+.PHONY : Src/main.cpp.obj
 
 Src/main.i: Src/main.cpp.i
 
@@ -138,7 +190,7 @@ Src/main.i: Src/main.cpp.i
 
 # target to preprocess a source file
 Src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Src/main.cpp.i
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/Src/main.cpp.i
 .PHONY : Src/main.cpp.i
 
 Src/main.s: Src/main.cpp.s
@@ -147,8 +199,35 @@ Src/main.s: Src/main.cpp.s
 
 # target to generate assembly for a file
 Src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Src/main.cpp.s
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/Src/main.cpp.s
 .PHONY : Src/main.cpp.s
+
+Src/schedule.obj: Src/schedule.cpp.obj
+
+.PHONY : Src/schedule.obj
+
+# target to build an object file
+Src/schedule.cpp.obj:
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/Src/schedule.cpp.obj
+.PHONY : Src/schedule.cpp.obj
+
+Src/schedule.i: Src/schedule.cpp.i
+
+.PHONY : Src/schedule.i
+
+# target to preprocess a source file
+Src/schedule.cpp.i:
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/Src/schedule.cpp.i
+.PHONY : Src/schedule.cpp.i
+
+Src/schedule.s: Src/schedule.cpp.s
+
+.PHONY : Src/schedule.s
+
+# target to generate assembly for a file
+Src/schedule.cpp.s:
+	$(MAKE) -f CMakeFiles/scheduler-atmega2560.elf.dir/build.make CMakeFiles/scheduler-atmega2560.elf.dir/Src/schedule.cpp.s
+.PHONY : Src/schedule.cpp.s
 
 # Help Target
 help:
@@ -157,11 +236,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... main"
 	@echo "... edit_cache"
-	@echo "... Src/main.o"
+	@echo "... scheduler"
+	@echo "... scheduler-atmega2560.elf"
+	@echo "... upload_scheduler"
+	@echo "... upload_scheduler_eeprom"
+	@echo "... disassemble_scheduler"
+	@echo "... Src/main.obj"
 	@echo "... Src/main.i"
 	@echo "... Src/main.s"
+	@echo "... Src/schedule.obj"
+	@echo "... Src/schedule.i"
+	@echo "... Src/schedule.s"
 .PHONY : help
 
 

@@ -1,6 +1,7 @@
-The system is: Linux - 5.4.8-arch1-1 - x86_64
+The target system is: Generic -  - avr
+The host system is: Linux - 5.4.12-ck - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/bin/cc 
+Compiler: /usr/bin/avr-gcc 
 Build flags: 
 Id flags:  
 
@@ -10,10 +11,10 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/3.16.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/3.16.4/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /usr/bin/c++ 
+Compiler: /usr/bin/avr-g++ 
 Build flags: 
 Id flags:  
 
@@ -23,18 +24,18 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/3.16.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/3.16.4/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_aa832/fast && /usr/bin/make -f CMakeFiles/cmTC_aa832.dir/build.make CMakeFiles/cmTC_aa832.dir/build
+Run Build Command(s):/usr/bin/make cmTC_14c63/fast && /usr/bin/make -f CMakeFiles/cmTC_14c63.dir/build.make CMakeFiles/cmTC_14c63.dir/build
 make[1]: вход в каталог «/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_aa832.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_aa832.dir/testCCompiler.c.o   -c /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_aa832
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa832.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_aa832.dir/testCCompiler.c.o  -o cmTC_aa832 
+Building C object CMakeFiles/cmTC_14c63.dir/testCCompiler.c.obj
+/usr/bin/avr-gcc   -O3 -DNDEBUG   -o CMakeFiles/cmTC_14c63.dir/testCCompiler.c.obj   -c /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_14c63
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14c63.dir/link.txt --verbose=1
+/usr/bin/avr-gcc   -O3 -DNDEBUG    CMakeFiles/cmTC_14c63.dir/testCCompiler.c.obj  -o cmTC_14c63 
 make[1]: выход из каталога «/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp»
 
 
@@ -42,56 +43,59 @@ make[1]: выход из каталога «/home/nikto_b/Documents/C++/schedule
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_e9dd9/fast && /usr/bin/make -f CMakeFiles/cmTC_e9dd9.dir/build.make CMakeFiles/cmTC_e9dd9.dir/build
+Run Build Command(s):/usr/bin/make cmTC_b56c3/fast && /usr/bin/make -f CMakeFiles/cmTC_b56c3.dir/build.make CMakeFiles/cmTC_b56c3.dir/build
 make[1]: Entering directory '/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc   -v -o CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Building C object CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj
+/usr/bin/avr-gcc   -O3 -DNDEBUG   -v -o CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
 Using built-in specs.
-COLLECT_GCC=/usr/bin/cc
-Target: x86_64-pc-linux-gnu
-Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++,d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc
-Thread model: posix
+Reading specs from /usr/lib/gcc/avr/9.2.0/device-specs/specs-avr2
+COLLECT_GCC=/usr/bin/avr-gcc
+Target: avr
+Configured with: /build/avr-gcc/src/gcc-9.2.0/configure --disable-install-libiberty --disable-libssp --disable-libstdcxx-pch --disable-libunwind-exceptions --disable-linker-build-id --disable-nls --disable-werror --disable-__cxa_atexit --enable-checking=release --enable-clocale=gnu --enable-gnu-unique-object --enable-gold --enable-languages=c,c++ --enable-ld=default --enable-lto --enable-plugin --enable-shared --infodir=/usr/share/info --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --prefix=/usr --target=avr --with-as=/usr/bin/avr-as --with-gnu-as --with-gnu-ld --with-ld=/usr/bin/avr-ld --with-plugin-ld=ld.gold --with-system-zlib --with-isl --enable-gnu-indirect-function
+Thread model: single
 gcc version 9.2.0 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/cc1 -quiet -v /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccdhIuyT.s
-GNU C17 (GCC) version 9.2.0 (x86_64-pc-linux-gnu)
-	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2'
+ /usr/lib/gcc/avr/9.2.0/cc1 -quiet -v -D NDEBUG /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -mn-flash=6 -mskip-bug -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj -O3 -version -o /tmp/ccPad1IJ.s
+GNU C17 (GCC) version 9.2.0 (avr)
+	compiled by GNU C version 9.1.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
+warning: GMP header version 6.1.2 differs from library version 6.2.0.
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/sys-include"
 #include "..." search starts here:
 #include <...> search starts here:
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include
- /usr/local/include
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed
- /usr/include
+ /usr/lib/gcc/avr/9.2.0/include
+ /usr/lib/gcc/avr/9.2.0/include-fixed
+ /usr/lib/gcc/avr/9.2.0/../../../../avr/include
 End of search list.
-GNU C17 (GCC) version 9.2.0 (x86_64-pc-linux-gnu)
-	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+GNU C17 (GCC) version 9.2.0 (avr)
+	compiled by GNU C version 9.1.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
+warning: GMP header version 6.1.2 differs from library version 6.2.0.
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: 084559c67b5620be476de387987f6c74
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o /tmp/ccdhIuyT.s
-GNU assembler version 2.33.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.33.1
-COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-Linking C executable cmTC_e9dd9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9dd9.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o  -o cmTC_e9dd9 
+Compiler executable checksum: 9e21802f93858768babf334981744e2e
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2'
+ /usr/bin/avr-as -v -mmcu=avr2 -mgcc-isr -o CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj /tmp/ccPad1IJ.s
+GNU assembler version 2.34 (avr) using BFD version (GNU Binutils) 2.34
+COMPILER_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/
+LIBRARY_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/../../../../avr/lib/
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2'
+Linking C executable cmTC_b56c3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b56c3.dir/link.txt --verbose=1
+/usr/bin/avr-gcc   -O3 -DNDEBUG   -v CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj  -o cmTC_b56c3 
 Using built-in specs.
-COLLECT_GCC=/usr/bin/cc
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper
-Target: x86_64-pc-linux-gnu
-Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++,d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc
-Thread model: posix
+Reading specs from /usr/lib/gcc/avr/9.2.0/device-specs/specs-avr2
+COLLECT_GCC=/usr/bin/avr-gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/9.2.0/lto-wrapper
+Target: avr
+Configured with: /build/avr-gcc/src/gcc-9.2.0/configure --disable-install-libiberty --disable-libssp --disable-libstdcxx-pch --disable-libunwind-exceptions --disable-linker-build-id --disable-nls --disable-werror --disable-__cxa_atexit --enable-checking=release --enable-clocale=gnu --enable-gnu-unique-object --enable-gold --enable-languages=c,c++ --enable-ld=default --enable-lto --enable-plugin --enable-shared --infodir=/usr/share/info --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --prefix=/usr --target=avr --with-as=/usr/bin/avr-as --with-gnu-as --with-gnu-ld --with-ld=/usr/bin/avr-ld --with-plugin-ld=ld.gold --with-system-zlib --with-isl --enable-gnu-indirect-function
+Thread model: single
 gcc version 9.2.0 (GCC) 
-COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e9dd9' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccb8wdJf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_e9dd9 /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0 -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../.. CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e9dd9' '-mtune=generic' '-march=x86-64'
+COMPILER_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/
+LIBRARY_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/../../../../avr/lib/
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'cmTC_b56c3' '-specs=device-specs/specs-avr2'
+ /usr/lib/gcc/avr/9.2.0/collect2 -plugin /usr/lib/gcc/avr/9.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/9.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvHLWK7.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc -o cmTC_b56c3 -L/usr/lib/gcc/avr/9.2.0 -L/usr/lib/gcc/avr/9.2.0/../../../../avr/lib CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lm -lc --end-group
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'cmTC_b56c3' '-specs=device-specs/specs-avr2'
 make[1]: Leaving directory '/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp'
 
 
@@ -99,134 +103,107 @@ make[1]: Leaving directory '/home/nikto_b/Documents/C++/scheduler/Build/CMakeFil
 Parsed C implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include]
-    add: [/usr/local/include]
-    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed]
-    add: [/usr/include]
+    add: [/usr/lib/gcc/avr/9.2.0/include]
+    add: [/usr/lib/gcc/avr/9.2.0/include-fixed]
+    add: [/usr/lib/gcc/avr/9.2.0/../../../../avr/include]
   end of search list found
-  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include]
-  collapse include dir [/usr/local/include] ==> [/usr/local/include]
-  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed]
-  collapse include dir [/usr/include] ==> [/usr/include]
-  implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include;/usr/local/include;/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed;/usr/include]
+  collapse include dir [/usr/lib/gcc/avr/9.2.0/include] ==> [/usr/lib/gcc/avr/9.2.0/include]
+  collapse include dir [/usr/lib/gcc/avr/9.2.0/include-fixed] ==> [/usr/lib/gcc/avr/9.2.0/include-fixed]
+  collapse include dir [/usr/lib/gcc/avr/9.2.0/../../../../avr/include] ==> [/usr/avr/include]
+  implicit include dirs: [/usr/lib/gcc/avr/9.2.0/include;/usr/lib/gcc/avr/9.2.0/include-fixed;/usr/avr/include]
 
 
 Parsed C implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  link line regex: [^( *|.*[/\])(avr-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_e9dd9/fast && /usr/bin/make -f CMakeFiles/cmTC_e9dd9.dir/build.make CMakeFiles/cmTC_e9dd9.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_b56c3/fast && /usr/bin/make -f CMakeFiles/cmTC_b56c3.dir/build.make CMakeFiles/cmTC_b56c3.dir/build]
   ignore line: [make[1]: Entering directory '/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Building C object CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/usr/bin/avr-gcc   -O3 -DNDEBUG   -v -o CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/cc]
-  ignore line: [Target: x86_64-pc-linux-gnu]
-  ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c c++ ada fortran go lto objc obj-c++ d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc]
-  ignore line: [Thread model: posix]
+  ignore line: [Reading specs from /usr/lib/gcc/avr/9.2.0/device-specs/specs-avr2]
+  ignore line: [COLLECT_GCC=/usr/bin/avr-gcc]
+  ignore line: [Target: avr]
+  ignore line: [Configured with: /build/avr-gcc/src/gcc-9.2.0/configure --disable-install-libiberty --disable-libssp --disable-libstdcxx-pch --disable-libunwind-exceptions --disable-linker-build-id --disable-nls --disable-werror --disable-__cxa_atexit --enable-checking=release --enable-clocale=gnu --enable-gnu-unique-object --enable-gold --enable-languages=c,c++ --enable-ld=default --enable-lto --enable-plugin --enable-shared --infodir=/usr/share/info --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --prefix=/usr --target=avr --with-as=/usr/bin/avr-as --with-gnu-as --with-gnu-ld --with-ld=/usr/bin/avr-ld --with-plugin-ld=ld.gold --with-system-zlib --with-isl --enable-gnu-indirect-function]
+  ignore line: [Thread model: single]
   ignore line: [gcc version 9.2.0 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/cc1 -quiet -v /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccdhIuyT.s]
-  ignore line: [GNU C17 (GCC) version 9.2.0 (x86_64-pc-linux-gnu)]
-  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: [COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2']
+  ignore line: [ /usr/lib/gcc/avr/9.2.0/cc1 -quiet -v -D NDEBUG /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -mn-flash=6 -mskip-bug -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj -O3 -version -o /tmp/ccPad1IJ.s]
+  ignore line: [GNU C17 (GCC) version 9.2.0 (avr)]
+  ignore line: [	compiled by GNU C version 9.1.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
+  ignore line: [warning: GMP header version 6.1.2 differs from library version 6.2.0.]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/sys-include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include]
-  ignore line: [ /usr/local/include]
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed]
-  ignore line: [ /usr/include]
+  ignore line: [ /usr/lib/gcc/avr/9.2.0/include]
+  ignore line: [ /usr/lib/gcc/avr/9.2.0/include-fixed]
+  ignore line: [ /usr/lib/gcc/avr/9.2.0/../../../../avr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C17 (GCC) version 9.2.0 (x86_64-pc-linux-gnu)]
-  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: [GNU C17 (GCC) version 9.2.0 (avr)]
+  ignore line: [	compiled by GNU C version 9.1.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
+  ignore line: [warning: GMP header version 6.1.2 differs from library version 6.2.0.]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: 084559c67b5620be476de387987f6c74]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o /tmp/ccdhIuyT.s]
-  ignore line: [GNU assembler version 2.33.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.33.1]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking C executable cmTC_e9dd9]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9dd9.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o  -o cmTC_e9dd9 ]
+  ignore line: [Compiler executable checksum: 9e21802f93858768babf334981744e2e]
+  ignore line: [COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2']
+  ignore line: [ /usr/bin/avr-as -v -mmcu=avr2 -mgcc-isr -o CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj /tmp/ccPad1IJ.s]
+  ignore line: [GNU assembler version 2.34 (avr) using BFD version (GNU Binutils) 2.34]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/../../../../avr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2']
+  ignore line: [Linking C executable cmTC_b56c3]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b56c3.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/avr-gcc   -O3 -DNDEBUG   -v CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj  -o cmTC_b56c3 ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/cc]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper]
-  ignore line: [Target: x86_64-pc-linux-gnu]
-  ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c c++ ada fortran go lto objc obj-c++ d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc]
-  ignore line: [Thread model: posix]
+  ignore line: [Reading specs from /usr/lib/gcc/avr/9.2.0/device-specs/specs-avr2]
+  ignore line: [COLLECT_GCC=/usr/bin/avr-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/9.2.0/lto-wrapper]
+  ignore line: [Target: avr]
+  ignore line: [Configured with: /build/avr-gcc/src/gcc-9.2.0/configure --disable-install-libiberty --disable-libssp --disable-libstdcxx-pch --disable-libunwind-exceptions --disable-linker-build-id --disable-nls --disable-werror --disable-__cxa_atexit --enable-checking=release --enable-clocale=gnu --enable-gnu-unique-object --enable-gold --enable-languages=c,c++ --enable-ld=default --enable-lto --enable-plugin --enable-shared --infodir=/usr/share/info --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --prefix=/usr --target=avr --with-as=/usr/bin/avr-as --with-gnu-as --with-gnu-ld --with-ld=/usr/bin/avr-ld --with-plugin-ld=ld.gold --with-system-zlib --with-isl --enable-gnu-indirect-function]
+  ignore line: [Thread model: single]
   ignore line: [gcc version 9.2.0 (GCC) ]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e9dd9' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccb8wdJf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_e9dd9 /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0 -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../.. CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crtn.o]
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/collect2] ==> ignore
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/../../../../avr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'cmTC_b56c3' '-specs=device-specs/specs-avr2']
+  link line: [ /usr/lib/gcc/avr/9.2.0/collect2 -plugin /usr/lib/gcc/avr/9.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/9.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvHLWK7.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc -o cmTC_b56c3 -L/usr/lib/gcc/avr/9.2.0 -L/usr/lib/gcc/avr/9.2.0/../../../../avr/lib CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lm -lc --end-group]
+    arg [/usr/lib/gcc/avr/9.2.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccb8wdJf.res] ==> ignore
+    arg [/usr/lib/gcc/avr/9.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/avr/9.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccvHLWK7.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lm] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [--build-id] ==> ignore
-    arg [--eh-frame-hdr] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [-m] ==> ignore
-    arg [elf_x86_64] ==> ignore
-    arg [-export-dynamic] ==> ignore
-    arg [-dynamic-linker] ==> ignore
-    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-    arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_e9dd9] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/Scrt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtbeginS.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0]
-    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib]
-    arg [-L/lib/../lib] ==> dir [/lib/../lib]
-    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../..]
-    arg [CMakeFiles/cmTC_e9dd9.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [cmTC_b56c3] ==> ignore
+    arg [-L/usr/lib/gcc/avr/9.2.0] ==> dir [/usr/lib/gcc/avr/9.2.0]
+    arg [-L/usr/lib/gcc/avr/9.2.0/../../../../avr/lib] ==> dir [/usr/lib/gcc/avr/9.2.0/../../../../avr/lib]
+    arg [CMakeFiles/cmTC_b56c3.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [--start-group] ==> ignore
     arg [-lgcc] ==> lib [gcc]
-    arg [--push-state] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--pop-state] ==> ignore
+    arg [-lm] ==> lib [m]
     arg [-lc] ==> lib [c]
-    arg [-lgcc] ==> lib [gcc]
-    arg [--push-state] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--pop-state] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtendS.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crtn.o] ==> ignore
-  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0]
-  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../..] ==> [/usr/lib]
-  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
-  implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0;/usr/lib;/lib]
+    arg [--end-group] ==> ignore
+  collapse library dir [/usr/lib/gcc/avr/9.2.0] ==> [/usr/lib/gcc/avr/9.2.0]
+  collapse library dir [/usr/lib/gcc/avr/9.2.0/../../../../avr/lib] ==> [/usr/avr/lib]
+  implicit libs: [gcc;m;c]
+  implicit dirs: [/usr/lib/gcc/avr/9.2.0;/usr/avr/lib]
   implicit fwks: []
 
 
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_e0de8/fast && /usr/bin/make -f CMakeFiles/cmTC_e0de8.dir/build.make CMakeFiles/cmTC_e0de8.dir/build
+Run Build Command(s):/usr/bin/make cmTC_5ea39/fast && /usr/bin/make -f CMakeFiles/cmTC_5ea39.dir/build.make CMakeFiles/cmTC_5ea39.dir/build
 make[1]: вход в каталог «/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_e0de8.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_e0de8.dir/testCXXCompiler.cxx.o -c /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_e0de8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0de8.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_e0de8.dir/testCXXCompiler.cxx.o  -o cmTC_e0de8 
+Building CXX object CMakeFiles/cmTC_5ea39.dir/testCXXCompiler.cxx.obj
+/usr/bin/avr-g++    -O3 -DNDEBUG   -o CMakeFiles/cmTC_5ea39.dir/testCXXCompiler.cxx.obj -c /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_5ea39
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ea39.dir/link.txt --verbose=1
+/usr/bin/avr-g++    -O3 -DNDEBUG    CMakeFiles/cmTC_5ea39.dir/testCXXCompiler.cxx.obj  -o cmTC_5ea39 
 make[1]: выход из каталога «/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp»
 
 
@@ -234,59 +211,62 @@ make[1]: выход из каталога «/home/nikto_b/Documents/C++/schedule
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_3b8b3/fast && /usr/bin/make -f CMakeFiles/cmTC_3b8b3.dir/build.make CMakeFiles/cmTC_3b8b3.dir/build
+Run Build Command(s):/usr/bin/make cmTC_5af1d/fast && /usr/bin/make -f CMakeFiles/cmTC_5af1d.dir/build.make CMakeFiles/cmTC_5af1d.dir/build
 make[1]: Entering directory '/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++    -v -o CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Building CXX object CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj
+/usr/bin/avr-g++    -O3 -DNDEBUG   -v -o CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
-COLLECT_GCC=/usr/bin/c++
-Target: x86_64-pc-linux-gnu
-Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++,d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc
-Thread model: posix
+Reading specs from /usr/lib/gcc/avr/9.2.0/device-specs/specs-avr2
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: /build/avr-gcc/src/gcc-9.2.0/configure --disable-install-libiberty --disable-libssp --disable-libstdcxx-pch --disable-libunwind-exceptions --disable-linker-build-id --disable-nls --disable-werror --disable-__cxa_atexit --enable-checking=release --enable-clocale=gnu --enable-gnu-unique-object --enable-gold --enable-languages=c,c++ --enable-ld=default --enable-lto --enable-plugin --enable-shared --infodir=/usr/share/info --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --prefix=/usr --target=avr --with-as=/usr/bin/avr-as --with-gnu-as --with-gnu-ld --with-ld=/usr/bin/avr-ld --with-plugin-ld=ld.gold --with-system-zlib --with-isl --enable-gnu-indirect-function
+Thread model: single
 gcc version 9.2.0 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccXm9vyJ.s
-GNU C++14 (GCC) version 9.2.0 (x86_64-pc-linux-gnu)
-	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2'
+ /usr/lib/gcc/avr/9.2.0/cc1plus -quiet -v -D NDEBUG /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -mn-flash=6 -mskip-bug -quiet -dumpbase CMakeCXXCompilerABI.cpp -auxbase-strip CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj -O3 -version -mn-flash=6 -mskip-bug -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccGj2rsL.s
+GNU C++14 (GCC) version 9.2.0 (avr)
+	compiled by GNU C version 9.1.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
+warning: GMP header version 6.1.2 differs from library version 6.2.0.
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/include/c++/9.2.0"
+ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/include/c++/9.2.0/avr"
+ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/include/c++/9.2.0/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/sys-include"
 #include "..." search starts here:
 #include <...> search starts here:
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include
- /usr/local/include
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed
- /usr/include
+ /usr/lib/gcc/avr/9.2.0/include
+ /usr/lib/gcc/avr/9.2.0/include-fixed
+ /usr/lib/gcc/avr/9.2.0/../../../../avr/include
 End of search list.
-GNU C++14 (GCC) version 9.2.0 (x86_64-pc-linux-gnu)
-	compiled by GNU C version 9.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+GNU C++14 (GCC) version 9.2.0 (avr)
+	compiled by GNU C version 9.1.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
+warning: GMP header version 6.1.2 differs from library version 6.2.0.
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: e70628160ff7c7e477f7d9570e6637cb
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccXm9vyJ.s
-GNU assembler version 2.33.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.33.1
-COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_3b8b3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b8b3.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3b8b3 
+Compiler executable checksum: 90b02a5414fc8c790aa4e77da98708d1
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2'
+ /usr/bin/avr-as -v -mmcu=avr2 -mgcc-isr -o CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccGj2rsL.s
+GNU assembler version 2.34 (avr) using BFD version (GNU Binutils) 2.34
+COMPILER_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/
+LIBRARY_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/../../../../avr/lib/
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2'
+Linking CXX executable cmTC_5af1d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5af1d.dir/link.txt --verbose=1
+/usr/bin/avr-g++    -O3 -DNDEBUG   -v CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_5af1d 
 Using built-in specs.
-COLLECT_GCC=/usr/bin/c++
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper
-Target: x86_64-pc-linux-gnu
-Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++,d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc
-Thread model: posix
+Reading specs from /usr/lib/gcc/avr/9.2.0/device-specs/specs-avr2
+COLLECT_GCC=/usr/bin/avr-g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/9.2.0/lto-wrapper
+Target: avr
+Configured with: /build/avr-gcc/src/gcc-9.2.0/configure --disable-install-libiberty --disable-libssp --disable-libstdcxx-pch --disable-libunwind-exceptions --disable-linker-build-id --disable-nls --disable-werror --disable-__cxa_atexit --enable-checking=release --enable-clocale=gnu --enable-gnu-unique-object --enable-gold --enable-languages=c,c++ --enable-ld=default --enable-lto --enable-plugin --enable-shared --infodir=/usr/share/info --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --prefix=/usr --target=avr --with-as=/usr/bin/avr-as --with-gnu-as --with-gnu-ld --with-ld=/usr/bin/avr-ld --with-plugin-ld=ld.gold --with-system-zlib --with-isl --enable-gnu-indirect-function
+Thread model: single
 gcc version 9.2.0 (GCC) 
-COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3b8b3' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbUjZ64.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3b8b3 /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0 -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../.. CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3b8b3' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COMPILER_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/
+LIBRARY_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/../../../../avr/lib/
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'cmTC_5af1d' '-specs=device-specs/specs-avr2'
+ /usr/lib/gcc/avr/9.2.0/collect2 -plugin /usr/lib/gcc/avr/9.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/9.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNUhqm6.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc -o cmTC_5af1d -L/usr/lib/gcc/avr/9.2.0 -L/usr/lib/gcc/avr/9.2.0/../../../../avr/lib CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj -lgcc -lm --start-group -lgcc -lm -lc --end-group
+COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'cmTC_5af1d' '-specs=device-specs/specs-avr2'
 make[1]: Leaving directory '/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp'
 
 
@@ -294,126 +274,99 @@ make[1]: Leaving directory '/home/nikto_b/Documents/C++/scheduler/Build/CMakeFil
 Parsed CXX implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0]
-    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu]
-    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward]
-    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include]
-    add: [/usr/local/include]
-    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed]
-    add: [/usr/include]
+    add: [/usr/lib/gcc/avr/9.2.0/include]
+    add: [/usr/lib/gcc/avr/9.2.0/include-fixed]
+    add: [/usr/lib/gcc/avr/9.2.0/../../../../avr/include]
   end of search list found
-  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0] ==> [/usr/include/c++/9.2.0]
-  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu] ==> [/usr/include/c++/9.2.0/x86_64-pc-linux-gnu]
-  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward] ==> [/usr/include/c++/9.2.0/backward]
-  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include]
-  collapse include dir [/usr/local/include] ==> [/usr/local/include]
-  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed]
-  collapse include dir [/usr/include] ==> [/usr/include]
-  implicit include dirs: [/usr/include/c++/9.2.0;/usr/include/c++/9.2.0/x86_64-pc-linux-gnu;/usr/include/c++/9.2.0/backward;/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include;/usr/local/include;/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed;/usr/include]
+  collapse include dir [/usr/lib/gcc/avr/9.2.0/include] ==> [/usr/lib/gcc/avr/9.2.0/include]
+  collapse include dir [/usr/lib/gcc/avr/9.2.0/include-fixed] ==> [/usr/lib/gcc/avr/9.2.0/include-fixed]
+  collapse include dir [/usr/lib/gcc/avr/9.2.0/../../../../avr/include] ==> [/usr/avr/include]
+  implicit include dirs: [/usr/lib/gcc/avr/9.2.0/include;/usr/lib/gcc/avr/9.2.0/include-fixed;/usr/avr/include]
 
 
 Parsed CXX implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  link line regex: [^( *|.*[/\])(avr-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_3b8b3/fast && /usr/bin/make -f CMakeFiles/cmTC_3b8b3.dir/build.make CMakeFiles/cmTC_3b8b3.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_5af1d/fast && /usr/bin/make -f CMakeFiles/cmTC_5af1d.dir/build.make CMakeFiles/cmTC_5af1d.dir/build]
   ignore line: [make[1]: Entering directory '/home/nikto_b/Documents/C++/scheduler/Build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Building CXX object CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [/usr/bin/avr-g++    -O3 -DNDEBUG   -v -o CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/c++]
-  ignore line: [Target: x86_64-pc-linux-gnu]
-  ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c c++ ada fortran go lto objc obj-c++ d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc]
-  ignore line: [Thread model: posix]
+  ignore line: [Reading specs from /usr/lib/gcc/avr/9.2.0/device-specs/specs-avr2]
+  ignore line: [COLLECT_GCC=/usr/bin/avr-g++]
+  ignore line: [Target: avr]
+  ignore line: [Configured with: /build/avr-gcc/src/gcc-9.2.0/configure --disable-install-libiberty --disable-libssp --disable-libstdcxx-pch --disable-libunwind-exceptions --disable-linker-build-id --disable-nls --disable-werror --disable-__cxa_atexit --enable-checking=release --enable-clocale=gnu --enable-gnu-unique-object --enable-gold --enable-languages=c,c++ --enable-ld=default --enable-lto --enable-plugin --enable-shared --infodir=/usr/share/info --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --prefix=/usr --target=avr --with-as=/usr/bin/avr-as --with-gnu-as --with-gnu-ld --with-ld=/usr/bin/avr-ld --with-plugin-ld=ld.gold --with-system-zlib --with-isl --enable-gnu-indirect-function]
+  ignore line: [Thread model: single]
   ignore line: [gcc version 9.2.0 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccXm9vyJ.s]
-  ignore line: [GNU C++14 (GCC) version 9.2.0 (x86_64-pc-linux-gnu)]
-  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: [COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2']
+  ignore line: [ /usr/lib/gcc/avr/9.2.0/cc1plus -quiet -v -D NDEBUG /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -mn-flash=6 -mskip-bug -quiet -dumpbase CMakeCXXCompilerABI.cpp -auxbase-strip CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj -O3 -version -mn-flash=6 -mskip-bug -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccGj2rsL.s]
+  ignore line: [GNU C++14 (GCC) version 9.2.0 (avr)]
+  ignore line: [	compiled by GNU C version 9.1.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
+  ignore line: [warning: GMP header version 6.1.2 differs from library version 6.2.0.]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/include/c++/9.2.0"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/include/c++/9.2.0/avr"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/include/c++/9.2.0/backward"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/avr/9.2.0/../../../../avr/sys-include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0]
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu]
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward]
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include]
-  ignore line: [ /usr/local/include]
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed]
-  ignore line: [ /usr/include]
+  ignore line: [ /usr/lib/gcc/avr/9.2.0/include]
+  ignore line: [ /usr/lib/gcc/avr/9.2.0/include-fixed]
+  ignore line: [ /usr/lib/gcc/avr/9.2.0/../../../../avr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C++14 (GCC) version 9.2.0 (x86_64-pc-linux-gnu)]
-  ignore line: [	compiled by GNU C version 9.2.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+  ignore line: [GNU C++14 (GCC) version 9.2.0 (avr)]
+  ignore line: [	compiled by GNU C version 9.1.0  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
+  ignore line: [warning: GMP header version 6.1.2 differs from library version 6.2.0.]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: e70628160ff7c7e477f7d9570e6637cb]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccXm9vyJ.s]
-  ignore line: [GNU assembler version 2.33.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.33.1]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_3b8b3]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b8b3.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3b8b3 ]
+  ignore line: [Compiler executable checksum: 90b02a5414fc8c790aa4e77da98708d1]
+  ignore line: [COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2']
+  ignore line: [ /usr/bin/avr-as -v -mmcu=avr2 -mgcc-isr -o CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccGj2rsL.s]
+  ignore line: [GNU assembler version 2.34 (avr) using BFD version (GNU Binutils) 2.34]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/../../../../avr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2']
+  ignore line: [Linking CXX executable cmTC_5af1d]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5af1d.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/avr-g++    -O3 -DNDEBUG   -v CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_5af1d ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/c++]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper]
-  ignore line: [Target: x86_64-pc-linux-gnu]
-  ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c c++ ada fortran go lto objc obj-c++ d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc]
-  ignore line: [Thread model: posix]
+  ignore line: [Reading specs from /usr/lib/gcc/avr/9.2.0/device-specs/specs-avr2]
+  ignore line: [COLLECT_GCC=/usr/bin/avr-g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/9.2.0/lto-wrapper]
+  ignore line: [Target: avr]
+  ignore line: [Configured with: /build/avr-gcc/src/gcc-9.2.0/configure --disable-install-libiberty --disable-libssp --disable-libstdcxx-pch --disable-libunwind-exceptions --disable-linker-build-id --disable-nls --disable-werror --disable-__cxa_atexit --enable-checking=release --enable-clocale=gnu --enable-gnu-unique-object --enable-gold --enable-languages=c,c++ --enable-ld=default --enable-lto --enable-plugin --enable-shared --infodir=/usr/share/info --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --prefix=/usr --target=avr --with-as=/usr/bin/avr-as --with-gnu-as --with-gnu-ld --with-ld=/usr/bin/avr-ld --with-plugin-ld=ld.gold --with-system-zlib --with-isl --enable-gnu-indirect-function]
+  ignore line: [Thread model: single]
   ignore line: [gcc version 9.2.0 (GCC) ]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3b8b3' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbUjZ64.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3b8b3 /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0 -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../.. CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crtn.o]
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/collect2] ==> ignore
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/avr/9.2.0/:/usr/lib/gcc/avr/9.2.0/../../../../avr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-O3' '-D' 'NDEBUG' '-v' '-o' 'cmTC_5af1d' '-specs=device-specs/specs-avr2']
+  link line: [ /usr/lib/gcc/avr/9.2.0/collect2 -plugin /usr/lib/gcc/avr/9.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/9.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNUhqm6.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc -o cmTC_5af1d -L/usr/lib/gcc/avr/9.2.0 -L/usr/lib/gcc/avr/9.2.0/../../../../avr/lib CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj -lgcc -lm --start-group -lgcc -lm -lc --end-group]
+    arg [/usr/lib/gcc/avr/9.2.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccbUjZ64.res] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [/usr/lib/gcc/avr/9.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/avr/9.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccNUhqm6.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lm] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [--build-id] ==> ignore
-    arg [--eh-frame-hdr] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [-m] ==> ignore
-    arg [elf_x86_64] ==> ignore
-    arg [-export-dynamic] ==> ignore
-    arg [-dynamic-linker] ==> ignore
-    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-    arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_3b8b3] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/Scrt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtbeginS.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0]
-    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib]
-    arg [-L/lib/../lib] ==> dir [/lib/../lib]
-    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../..]
-    arg [CMakeFiles/cmTC_3b8b3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-    arg [-lstdc++] ==> lib [stdc++]
+    arg [cmTC_5af1d] ==> ignore
+    arg [-L/usr/lib/gcc/avr/9.2.0] ==> dir [/usr/lib/gcc/avr/9.2.0]
+    arg [-L/usr/lib/gcc/avr/9.2.0/../../../../avr/lib] ==> dir [/usr/lib/gcc/avr/9.2.0/../../../../avr/lib]
+    arg [CMakeFiles/cmTC_5af1d.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
     arg [-lm] ==> lib [m]
-    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--start-group] ==> ignore
     arg [-lgcc] ==> lib [gcc]
+    arg [-lm] ==> lib [m]
     arg [-lc] ==> lib [c]
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [-lgcc] ==> lib [gcc]
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/crtendS.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib/crtn.o] ==> ignore
-  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0]
-  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../..] ==> [/usr/lib]
-  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
-  implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0;/usr/lib;/lib]
+    arg [--end-group] ==> ignore
+  collapse library dir [/usr/lib/gcc/avr/9.2.0] ==> [/usr/lib/gcc/avr/9.2.0]
+  collapse library dir [/usr/lib/gcc/avr/9.2.0/../../../../avr/lib] ==> [/usr/avr/lib]
+  implicit libs: [gcc;m;gcc;m;c]
+  implicit dirs: [/usr/lib/gcc/avr/9.2.0;/usr/avr/lib]
   implicit fwks: []
 
 

@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/nikto_b/Documents/C++/scheduler/Build",
-  "command": "/usr/bin/c++   -I/home/nikto_b/Documents/C++/scheduler/Include   -Og -Wall -Wextra -std=gnu++11 -g -Werror   -std=gnu++17 -o CMakeFiles/main.dir/Src/main.cpp.o -c /home/nikto_b/Documents/C++/scheduler/Src/main.cpp",
-  "file": "/home/nikto_b/Documents/C++/scheduler/Src/main.cpp"
-}
-]

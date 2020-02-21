@@ -2,14 +2,12 @@
 
 namespace schedule
 {
-
-  void (*scheduleQueue[scheduleQueueMaxLen])();			              //SCH_MAX_LEN bytes
-  void (*scheduleSubqueueOnce[scheduleSubqueueOnceMaxLen])();			//SCH_MAX_LEN bytes
+  struct _Task       tasksMainLoop[scheduleQueueMaxLen];            //80 bytes
+  struct _Task       tasksAdditOnce[scheduleAdditQueueOnceMaxLen];  //16 bytes
 
   volatile uint16_t scheduleCounter = 0,    //2 bytes
                     scheduleQueueLen = 0,		//2 bytes
                     subscheduleQueueLen = 0;//2 bytes
-
 
   /*
    *	Function:	scheduleAddFunc
@@ -17,16 +15,16 @@ namespace schedule
    *	Input:		void* func: ptr to func
    *	Output:		none
    */
-  void scheduleAddFunc(void(* func)())
+  void scheduleAddFunc(struct _Task task)
   {
     #ifdef TRY_SORT
       for(uint16_t i = 0; i < scheduleQueueLen; i++)
       {
-        if(scheduleQueue[i] == 0)
+        if(tasksMainLoop[i].func == 0)
         {
-          ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+          ATOMIC_BgiaLOCK(ATOMIC_RESTORESTATE)
           {
-            scheduleQueue[i] = func;
+            tasksMainLoop[i] = task;
           }
           return;
         }
@@ -36,10 +34,36 @@ namespace schedule
     {
       if(scheduleQueueLen < scheduleQueueLen)
       {
-        scheduleQueue[scheduleQueueLen] = func;
+        tasksMainLoop[scheduleQueueLen] = task;
         scheduleQueueLen++;
       }
     }
+  }
+
+  
+  struct Task createTask(void(* func)())
+  {
+    struct Task task;
+    task.func = func;
+    return task;
+  }
+
+  struct Task createTask(void(* func)(), uint8_t quantsWanted)
+  {
+    struct Task task;
+    task.func = func;
+    task.quantsWanted = quantsWanted;
+    return task;
+  }
+
+
+  void setTaskQueue(const struct Task tasks[])
+  {
+    
+  }
+  void setTaskQueue(const void(*funcs[])())
+  {
+    
   }
 
 } //namespace schedule

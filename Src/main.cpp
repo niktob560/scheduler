@@ -6,8 +6,21 @@
 
 #include "schedule.hpp"
 
+void foo()
+{
+
+}
+
+void bar()
+{
+
+}
+
+const struct schedule::Task tasks[] = {{foo, 1}, {bar, 2}};
 
 int main()
 {
-    return 0;
+    struct schedule::Task task = {foo, 1};
+    schedule::setTaskQueue(tasks);
+    return task.quantsWanted;
 }

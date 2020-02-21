@@ -1,1 +1,0 @@
-/usr/bin/avr-g++  -Os  -mmcu=atmega2560 -Wl,--gc-sections -mrelax -Wl,-Map,scheduler-atmega2560.map CMakeFiles/scheduler-atmega2560.elf.dir/Src/main.cpp.obj CMakeFiles/scheduler-atmega2560.elf.dir/Src/schedule.cpp.obj  -o scheduler-atmega2560.elf 

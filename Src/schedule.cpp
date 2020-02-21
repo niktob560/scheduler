@@ -22,7 +22,7 @@ namespace schedule
       {
         if(tasksMainLoop[i].func == 0)
         {
-          ATOMIC_BgiaLOCK(ATOMIC_RESTORESTATE)
+          ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
           {
             tasksMainLoop[i] = task;
           }
@@ -43,27 +43,51 @@ namespace schedule
   
   struct Task createTask(void(* func)())
   {
-    struct Task task;
+    struct Task task = {func, 1};
     task.func = func;
     return task;
   }
 
   struct Task createTask(void(* func)(), uint8_t quantsWanted)
   {
-    struct Task task;
-    task.func = func;
-    task.quantsWanted = quantsWanted;
+    struct Task task = {func, quantsWanted};
     return task;
   }
 
 
-  void setTaskQueue(const struct Task tasks[])
+  void _setTaskQueue(const struct Task tasks[], const size_t len)
   {
-    
+    for(size_t i = 0; i < scheduleQueueMaxLen; i++)
+    {
+      if(i < len)
+      {
+        tasksMainLoop[i].func = tasks[i].func;
+        tasksMainLoop[i].quantsWanted = tasks[i].quantsWanted;
+        tasksMainLoop[i].quantsElapsed = 0;
+      }
+      else
+      {
+        tasksMainLoop[i].func = 0;
+      }
+    }
   }
-  void setTaskQueue(const void(*funcs[])())
+
+  void _setTaskQueue(void(*funcs[])(), const size_t len)
   {
-    
+    for(size_t i = 0; i < scheduleQueueMaxLen; i++)
+    {
+      if(i < len)
+      {
+        tasksMainLoop[i].func = funcs[i];
+        tasksMainLoop[i].quantsWanted = 1;
+        tasksMainLoop[i].quantsElapsed = 0;
+      }
+      else
+      {
+        tasksMainLoop[i].func = 0;
+      }
+    }
   }
+
 
 } //namespace schedule

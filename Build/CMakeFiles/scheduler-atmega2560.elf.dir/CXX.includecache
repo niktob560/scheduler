@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Include/schedule.hpp
+avr/io.h
+-
+util/atomic.h
+-
+
+/home/nikto_b/Documents/C++/scheduler/Src/schedule.cpp
+schedule.hpp
+/home/nikto_b/Documents/C++/scheduler/Src/schedule.hpp
+

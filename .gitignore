@@ -1,2 +1,5 @@
 Build/
 ./.*
+.vscode
+.vscode/
+Build

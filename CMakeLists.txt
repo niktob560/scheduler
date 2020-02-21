@@ -8,6 +8,10 @@ set(AVR_MCU atmega2560)
 
 
 
+set (CMAKE_GENERATOR "Unix Makefiles" CACHE INTERNAL "" FORCE) 
+
+
+
 project(scheduler)
 
 

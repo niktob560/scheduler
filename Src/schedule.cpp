@@ -10,6 +10,64 @@ uint16_t 	scheduleCounter = 0, 				//2 bytes
 			subscheduleQueueLen = 0;		   	//2 bytes
 uint8_t 	quantsElapsed;						//1 byte
 
+const struct Task	emptyTask = {0,0};
+
+
+
+
+
+
+
+
+   
+void removeTask(const struct Task task)
+{
+	for(size_t i = 0; i < scheduleQueueLen; i++)
+	{
+		if(tasksMainLoop[i] == task)
+		{
+			ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+			{
+				tasksMainLoop[i] = emptyTask;
+				if(i == scheduleQueueLen)
+					scheduleQueueLen--;
+			}
+		}
+	}
+}
+
+
+void removeFunc(void (*func)())
+{
+	removeTask({func, 1});
+}
+
+
+void removeTaskOnce(const struct Task task)
+{
+	for(size_t i = 0; i < scheduleAdditQueueLen; i++)
+	{
+		if(tasksAdditOnce[i] == task)
+		{
+			ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+			{
+				tasksAdditOnce[i] = emptyTask;
+				if(i == scheduleAdditQueueLen)
+					scheduleAdditQueueLen--;
+			}
+		}
+	}
+}
+
+
+void removeFuncOnce(void (*func)())
+{
+	removeTaskOnce({func, 1});
+}
+
+
+
+
 
 void scheduleAddFunc(void (*func)())
 {
@@ -107,7 +165,7 @@ void _setOnceTaskQueue(const struct Task tasks[], const size_t len)
 		if(i < len)
 			tasksAdditOnce[i] = tasks[i];
 		else if (i < scheduleAdditQueueLen)
-			tasksAdditOnce[i] = {0,0};
+			tasksAdditOnce[i] = emptyTask;
 		else
 			break;
 	scheduleAdditQueueLen = len;
@@ -122,7 +180,7 @@ void _setOnceTaskQueue(void (*funcs[])(), const size_t len)
 			tasksAdditOnce[i].quantsWanted = 1;
 		}
 		else if (i < scheduleAdditQueueLen)
-			tasksAdditOnce[i] = {0,0};
+			tasksAdditOnce[i] = emptyTask;
 		else
 			break;
 	scheduleAdditQueueLen = len;

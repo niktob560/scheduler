@@ -9,6 +9,8 @@ namespace schedule
 const uint16_t 		scheduleQueueMaxLen = 20;
 const uint16_t 		scheduleAdditQueueOnceMaxLen = 4; //will be allocated in once queue
 
+extern const struct Task	emptyTask;								//3 bytes
+
 extern uint16_t 	scheduleCounter,								//2  bytes
 					scheduleQueueLen,								//2  bytes
 					scheduleAdditQueueLen;							//2  bytes
@@ -16,7 +18,7 @@ extern uint8_t 		quantsElapsed;									//1  byte
 extern struct Task 	tasksMainLoop[scheduleQueueMaxLen];			  	//60 bytes
 extern struct Task 	tasksAdditOnce[scheduleAdditQueueOnceMaxLen];  	//12 bytes
 //-----------------------------------------------------------------------------
-//                                                             TOTAL: 79 bytes
+//                                                             TOTAL: 82 bytes
 
 struct Task
 {
@@ -24,6 +26,48 @@ struct Task
 	uint8_t quantsWanted; //1 byte
 };
 //3 bytes
+
+//struct Task operator overriding starts
+
+//wanna override task struct comparison
+inline bool operator==(const struct Task& lhs, const struct Task& rhs){ return (lhs.quantsWanted == rhs.quantsWanted) && (lhs.func == rhs.func); }
+
+//struct Task operator overriding ends
+
+
+
+
+   /*
+    *	Function:	removeTask
+    *	Desc:		Remove task from loop queue
+    *	Input:			const struct Task task: task struct
+    *	Output:		none
+    */
+void removeTask(const struct Task task);
+
+   /*
+    *	Function:	removeFunc
+    *	Desc:		Remove task from loop queue with {func, 1} structure
+    *	Input:			void (*func)(): ptr to working func
+    *	Output:		none
+    */
+void removeFunc(void (*func)());
+
+   /*
+    *	Function:	removeTaskOnce
+    *	Desc:		Remove task from once execution queue
+    *	Input:			const struct Task task: task struct
+    *	Output:		none
+    */
+void removeTaskOnce(const struct Task task);
+
+   /*
+    *	Function:	removeFuncOnce
+    *	Desc:		Remove task from once execution queue with {func, 1} structure
+    *	Input:			void (*func)(): ptr to working func
+    *	Output:		none
+    */
+void removeFuncOnce(void (*func)());
 
 
    /*

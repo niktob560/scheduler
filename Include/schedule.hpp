@@ -6,8 +6,8 @@
 
 namespace schedule
 {
-const uint16_t 		scheduleQueueMaxLen = 20;
-const uint16_t 		scheduleAdditQueueOnceMaxLen = 4; //will be allocated in once queue
+const uint8_t 		scheduleQueueMaxLen = 20;
+const uint8_t 		scheduleAdditQueueOnceMaxLen = 4; //will be allocated in once queue
 
 extern const struct Task	emptyTask;								//3 bytes
 
@@ -19,6 +19,15 @@ extern struct Task 	tasksMainLoop[scheduleQueueMaxLen];			  	//60 bytes
 extern struct Task 	tasksAdditOnce[scheduleAdditQueueOnceMaxLen];  	//12 bytes
 //-----------------------------------------------------------------------------
 //                                                             TOTAL: 82 bytes
+
+
+//schedule task counter must be changing like
+//0
+//scheduleQueueLen
+//scheduleQueueMaxLen
+//scheduleAdditQueueLen + scheduleQueueMaxLen
+//scheduleAdditQueueMaxLen + scheduleQueueMaxLen
+
 
 struct Task
 {
@@ -71,39 +80,39 @@ void removeFuncOnce(void (*func)());
 
 
    /*
-    *	Function:	scheduleAddFunc
+    *	Function:	addFunc
     *	Desc:		Add func to repeat by schedule (adding instead of idle)(have side-effects)
 	*						quantsWanted field will be set to 1
     *	Input:			void* func: ptr to func
     *	Output:		none
     */
-void scheduleAddFunc(void (*func)());
+void addFunc(void (*func)());
 
    /*
-    *	Function:	scheduleAddFunc
+    *	Function:	addFunc
     *	Desc:		Add func to execute once by schedule (adding instead of idle)(have side-effects)
 	*						quantsWanted field will be set to 1
     *	Input:			void* func: ptr to func
     *	Output:		none
     */
-void scheduleAddOnceFunc(void (*func)());
+void addOnceFunc(void (*func)());
 
 
    /*
-    *	Function:	scheduleAddTask
+    *	Function:	addTask
     *	Desc:		Add func to repeat by schedule (adding instead of idle)(have side-effects)
     *	Input:			const struct Task task: task struct
     *	Output:		none
     */
-void scheduleAddTask(const struct Task task);
+void addTask(const struct Task task);
 
    /*
-    *	Function:	scheduleAddOnceTask
+    *	Function:	addOnceTask
     *	Desc:		Add func to execute once by schedule (adding instead of idle)(have side-effects)
     *	Input:			const struct Task task: task struct
     *	Output:		none
     */
-void scheduleAddOnceTask(const struct Task task);
+void addOnceTask(const struct Task task);
 
 
    /*

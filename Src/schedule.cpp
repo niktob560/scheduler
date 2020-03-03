@@ -69,18 +69,18 @@ void removeFuncOnce(void (*func)())
 
 
 
-void scheduleAddFunc(void (*func)())
+void addFunc(void (*func)())
 {
-	scheduleAddTask({func, 1});
+	addTask({func, 1});
 }
 
-void scheduleAddOnceFunc(void (*func)())
+void addOnceFunc(void (*func)())
 {
-	scheduleAddOnceTask({func, 1});
+	addOnceTask({func, 1});
 }
 
 
-void scheduleAddOnceTask(const struct Task task)
+void addOnceTask(const struct Task task)
 {
 #ifdef TRY_SORT
 	for (uint16_t i = 0; i < scheduleAdditQueueLen; i++)
@@ -184,6 +184,64 @@ void _setOnceTaskQueue(void (*funcs[])(), const size_t len)
 		else
 			break;
 	scheduleAdditQueueLen = len;
+}
+
+
+inline bool isIndexInMainLoop(const size_t index)
+{
+	return index < scheduleQueueLen;
+}
+
+inline bool isIndexInAddinQueue(const size_t index)
+{
+	return index >= scheduleQueueLen && index < scheduleAdditQueueLen + scheduleQueueMaxLen;
+}
+
+
+void call(const size_t index)
+{
+	if(isIndexInMainLoop(scheduleCounter) && tasksMainLoop[index].quantsWanted != 0)
+		tasksMainLoop[index].func();
+	else if(isIndexInAddinQueue(scheduleCounter) && tasksAdditOnce[index - scheduleQueueMaxLen].quantsWanted != 0)
+		tasksMainLoop[index - scheduleQueueMaxLen].func();
+}
+
+void schedule(void)
+{
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	{
+		if(isIndexInMainLoop(scheduleCounter))
+		{
+			//run task from main loop
+			if(quantsElapsed >= tasksMainLoop[scheduleCounter].quantsWanted)
+			{
+				quantsElapsed = 0;
+				scheduleCounter++;
+			}
+			else
+				quantsElapsed++;
+		}
+		else if(isIndexInAddinQueue(scheduleCounter))
+		{
+			//run task from once queue
+			if(quantsElapsed >= tasksAdditOnce[scheduleCounter - scheduleQueueLen].quantsWanted)
+			{
+				quantsElapsed = 0;
+				scheduleCounter++;
+			}
+			else
+				quantsElapsed++;
+		}
+		else
+		{
+			//set counter to zero, flush additional once queue and run from start
+			scheduleCounter = 0;
+			quantsElapsed = 0;
+			scheduleAdditQueueLen = 0;
+		}
+	}
+	if(quantsElapsed == 0)
+		call(scheduleCounter);
 }
 
 } //namespace schedule

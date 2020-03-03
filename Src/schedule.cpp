@@ -2,90 +2,130 @@
 
 namespace schedule
 {
-struct _Task tasksMainLoop[scheduleQueueMaxLen];           //80 bytes
-struct _Task tasksAdditOnce[scheduleAdditQueueOnceMaxLen]; //16 bytes
+struct Task tasksMainLoop[scheduleQueueMaxLen];		   		//80 bytes
+struct Task tasksAdditOnce[scheduleAdditQueueOnceMaxLen]; 	//16 bytes
 
-volatile uint16_t scheduleCounter = 0, //2 bytes
-    scheduleQueueLen = 0,              //2 bytes
-    subscheduleQueueLen = 0;           //2 bytes
+uint16_t 	scheduleCounter = 0, 				//2 bytes
+			scheduleQueueLen = 0,			   	//2 bytes
+			subscheduleQueueLen = 0;		   	//2 bytes
+uint8_t 	quantsElapsed;						//1 byte
 
-/*
-   *	Function:	scheduleAddFunc
-   *	Desc:		  Add func to repeat by schedule (adding instead of idle)
-   *	Input:		void* func: ptr to func
-   *	Output:		none
-   */
-void scheduleAddFunc(struct _Task task)
+
+void scheduleAddFunc(void (*func)())
+{
+	scheduleAddTask({func, 1});
+}
+
+void scheduleAddOnceFunc(void (*func)())
+{
+	scheduleAddOnceTask({func, 1});
+}
+
+
+void scheduleAddOnceTask(const struct Task task)
 {
 #ifdef TRY_SORT
-  for (uint16_t i = 0; i < scheduleQueueLen; i++)
-  {
-    if (tasksMainLoop[i].func == 0)
-    {
-      ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
-      {
-        tasksMainLoop[i] = task;
-      }
-      return;
-    }
-  }
-#endif
-  ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
-  {
-    if (scheduleQueueLen < scheduleQueueLen)
-    {
-      tasksMainLoop[scheduleQueueLen] = task;
-      scheduleQueueLen++;
-    }
-  }
+	for (uint16_t i = 0; i < scheduleAdditQueueLen; i++)
+	{
+		if (tasksAdditOnce[i].func == 0)	//if found empty slot for task
+		{
+			ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+			{
+				tasksAdditOnce[i] = task;	//put task to empty slot and exit function
+			}
+			return;
+		}
+	}
+#endif //ifdef TRY_SORT
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	{
+		if (scheduleAdditQueueLen < scheduleAdditQueueOnceMaxLen)	//add to last elem of queue
+		{
+			tasksAdditOnce[scheduleAdditQueueLen] = task;
+			scheduleAdditQueueLen++;
+		}
+	}
 }
 
-struct Task createTask(void (*func)())
+
+void scheduleAddTask(const struct Task task)
 {
-  struct Task task = {func, 1};
-  task.func = func;
-  return task;
+#ifdef TRY_SORT
+	for (uint16_t i = 0; i < scheduleQueueLen; i++)
+	{
+		if (tasksMainLoop[i].func == 0)
+		{
+			ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+			{
+				tasksMainLoop[i] = task;
+			}
+			return;
+		}
+	}
+#endif //ifdef TRY_SORT
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	{
+		if (scheduleQueueLen < scheduleQueueMaxLen)
+		{
+			tasksMainLoop[scheduleQueueLen] = task;
+			scheduleQueueLen++;
+		}
+	}
 }
 
-struct Task createTask(void (*func)(), uint8_t quantsWanted)
-{
-  struct Task task = {func, quantsWanted};
-  return task;
-}
 
 void _setTaskQueue(const struct Task tasks[], const size_t len)
 {
-  for (size_t i = 0; i < scheduleQueueMaxLen; i++)
-  {
-    if (i < len)
-    {
-      tasksMainLoop[i].func = tasks[i].func;
-      tasksMainLoop[i].quantsWanted = tasks[i].quantsWanted;
-      tasksMainLoop[i].quantsElapsed = 0;
-    }
-    else
-    {
-      tasksMainLoop[i].func = 0;
-    }
-  }
+	for (size_t i = 0; i < scheduleQueueMaxLen; i++)
+		if (i < len)
+			tasksMainLoop[i] = tasks[i];
+		else if (i < scheduleQueueLen)
+			tasksMainLoop[i].func = 0;
+		else
+			break;
+	scheduleQueueLen = len;
 }
 
 void _setTaskQueue(void (*funcs[])(), const size_t len)
 {
-  for (size_t i = 0; i < scheduleQueueLen; i++)
-  {
-    if (i < len)
-    {
-      tasksMainLoop[i].func = funcs[i];
-      tasksMainLoop[i].quantsWanted = 1;
-      tasksMainLoop[i].quantsElapsed = 0;
-    }
-    else
-    {
-      tasksMainLoop[i].func = 0;
-    }
-  }
-  scheduleQueueLen = len;
+	for (size_t i = 0; i < scheduleQueueMaxLen; i++)
+		if (i < len)
+		{
+			tasksMainLoop[i].func = funcs[i];
+			tasksMainLoop[i].quantsWanted = 1;
+		}
+		else if (i < scheduleQueueLen)
+			tasksMainLoop[i].func = 0;
+		else
+			break;
+	scheduleQueueLen = len;
+}
+
+void _setOnceTaskQueue(const struct Task tasks[], const size_t len)
+{
+	for (size_t i = 0; i < scheduleAdditQueueLen; i++)
+		if(i < len)
+			tasksAdditOnce[i] = tasks[i];
+		else if (i < scheduleAdditQueueLen)
+			tasksAdditOnce[i] = {0,0};
+		else
+			break;
+	scheduleAdditQueueLen = len;
+}
+
+void _setOnceTaskQueue(void (*funcs[])(), const size_t len)
+{
+	for (size_t i = 0; i < scheduleAdditQueueLen; i++)
+		if(i < len)
+		{
+			tasksAdditOnce[i].func = funcs[i];
+			tasksAdditOnce[i].quantsWanted = 1;
+		}
+		else if (i < scheduleAdditQueueLen)
+			tasksAdditOnce[i] = {0,0};
+		else
+			break;
+	scheduleAdditQueueLen = len;
 }
 
 } //namespace schedule

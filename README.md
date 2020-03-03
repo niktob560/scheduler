@@ -10,3 +10,8 @@ make
 -----
 How to use:  
 * Don't  
+-----
+Warning!
+=====
+This thing have troubles with dynamic edition of main task loop  
+Don't try to change main task loop after starting scheduler not in additional task queue as last element of queue

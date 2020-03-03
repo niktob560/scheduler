@@ -14,5 +14,5 @@ How to use:
 Warning!
 =====
 This thing have troubles with dynamic edition of main task loop  
-Don't try to change main task loop after starting scheduler not in additional task queue as last element of queue
+Don't try to change main task loop after starting scheduler not in additional task queue as last element of queue  
 I have *mabye* fixed this trouble, but not sure, so don't do that

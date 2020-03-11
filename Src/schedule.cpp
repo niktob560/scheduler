@@ -11,6 +11,7 @@ uint16_t 	scheduleCounter = 0, 				//2 bytes
 uint8_t 	quantsElapsed;						//1 byte
 
 const struct Task	emptyTask = {0,0};
+bool idle = false;
 
 
 
@@ -85,7 +86,7 @@ void addOnceTask(const struct Task task)
 #ifdef TRY_SORT
 	for (uint16_t i = 0; i < scheduleAdditQueueLen; i++)
 	{
-		if (tasksAdditOnce[i].func == 0)	//if found empty slot for task
+		if (tasksAdditOnce[i].quantsWanted == 0)	//if found empty slot for task
 		{
 			ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 			{
@@ -111,7 +112,7 @@ void scheduleAddTask(const struct Task task)
 #ifdef TRY_SORT
 	for (uint16_t i = 0; i < scheduleQueueLen; i++)
 	{
-		if (tasksMainLoop[i].func == 0)
+		if (tasksMainLoop[i].quantsWanted == 0)
 		{
 			ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 			{
@@ -138,7 +139,7 @@ void _setTaskQueue(const struct Task tasks[], const size_t len)
 		if (i < len)
 			tasksMainLoop[i] = tasks[i];
 		else if (i < scheduleQueueLen)
-			tasksMainLoop[i].func = 0;
+			tasksMainLoop[i] = emptyTask;
 		else
 			break;
 	scheduleQueueLen = len;
@@ -153,7 +154,7 @@ void _setTaskQueue(void (*funcs[])(), const size_t len)
 			tasksMainLoop[i].quantsWanted = 1;
 		}
 		else if (i < scheduleQueueLen)
-			tasksMainLoop[i].func = 0;
+			tasksMainLoop[i] = emptyTask;
 		else
 			break;
 	scheduleQueueLen = len;
@@ -200,10 +201,18 @@ inline bool isIndexInAddinQueue(const size_t index)
 
 void call(const size_t index)
 {
-	if(isIndexInMainLoop(scheduleCounter) && tasksMainLoop[index].quantsWanted != 0)
-		tasksMainLoop[index].func();
-	else if(isIndexInAddinQueue(scheduleCounter) && tasksAdditOnce[index - scheduleQueueMaxLen].quantsWanted != 0)
-		tasksMainLoop[index - scheduleQueueMaxLen].func();
+	void (*func)() = 0x00;
+	if(isIndexInMainLoop(scheduleCounter) && tasksMainLoop[index].quantsWanted != 0)								//get task from main loop
+		func = tasksMainLoop[index].func;
+	else if(isIndexInAddinQueue(scheduleCounter) && tasksAdditOnce[index - scheduleQueueMaxLen].quantsWanted != 0)	//get task from additional queue
+		func = tasksMainLoop[index - scheduleQueueMaxLen].func;
+	
+	if(idle && func != 0x00)		//if can call new task and task exists
+	{
+		idle = false;
+		func();
+		idle = true;
+	}
 }
 
 void schedule(void)
@@ -213,7 +222,7 @@ void schedule(void)
 		if(isIndexInMainLoop(scheduleCounter))
 		{
 			//run task from main loop
-			if(quantsElapsed >= tasksMainLoop[scheduleCounter].quantsWanted)
+			if(idle && quantsElapsed >= tasksMainLoop[scheduleCounter].quantsWanted)
 			{
 				quantsElapsed = 0;
 				scheduleCounter++;
@@ -224,7 +233,7 @@ void schedule(void)
 		else if(isIndexInAddinQueue(scheduleCounter))
 		{
 			//run task from once queue
-			if(quantsElapsed >= tasksAdditOnce[scheduleCounter - scheduleQueueLen].quantsWanted)
+			if(idle && quantsElapsed >= tasksAdditOnce[scheduleCounter - scheduleQueueLen].quantsWanted)
 			{
 				quantsElapsed = 0;
 				scheduleCounter++;
@@ -232,7 +241,7 @@ void schedule(void)
 			else
 				quantsElapsed++;
 		}
-		else
+		else if(idle)
 		{
 			//set counter to zero, flush additional once queue and run from start
 			scheduleCounter = 0;

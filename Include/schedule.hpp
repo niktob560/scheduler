@@ -9,6 +9,8 @@ namespace schedule
 const uint8_t 		scheduleQueueMaxLen = 20;
 const uint8_t 		scheduleAdditQueueOnceMaxLen = 4; //will be allocated in once queue
 
+extern bool			idle;											//1 byte
+
 extern const struct Task	emptyTask;								//3 bytes
 
 extern uint16_t 	scheduleCounter,								//2  bytes
@@ -18,7 +20,7 @@ extern uint8_t 		quantsElapsed;									//1  byte
 extern struct Task 	tasksMainLoop[scheduleQueueMaxLen];			  	//60 bytes
 extern struct Task 	tasksAdditOnce[scheduleAdditQueueOnceMaxLen];  	//12 bytes
 //-----------------------------------------------------------------------------
-//                                                             TOTAL: 82 bytes
+//                                                             TOTAL: 83 bytes
 
 
 //schedule task counter must be changing like

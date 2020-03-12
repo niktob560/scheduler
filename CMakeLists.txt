@@ -95,10 +95,10 @@ add_avr_executable(
    Src/main.cpp Src/schedule.cpp Include/schedule.hpp
 )
 
-# add_avr_library(
-#    <library-name>
-#    <sources> <headers>
-# )
+add_avr_library(
+   libscheduler
+   Src/main.cpp Src/schedule.cpp Include/schedule.hpp
+)
 
 
 

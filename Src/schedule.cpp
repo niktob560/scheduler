@@ -5,13 +5,14 @@ namespace schedule
 struct Task tasksMainLoop[scheduleQueueMaxLen];		   		//80 bytes
 struct Task tasksAdditOnce[scheduleAdditQueueOnceMaxLen]; 	//16 bytes
 
-uint16_t 	scheduleCounter = 0, 				//2 bytes
-			scheduleQueueLen = 0,			   	//2 bytes
-			subscheduleQueueLen = 0;		   	//2 bytes
 uint8_t 	quantsElapsed;						//1 byte
 
 const struct Task	emptyTask = {0,0};
 bool idle = false;
+
+uint16_t 	scheduleCounter,								//2  bytes
+			scheduleQueueLen,								//2  bytes
+			scheduleAdditQueueLen;							//2  bytes
 
 
 

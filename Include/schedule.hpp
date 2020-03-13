@@ -198,4 +198,8 @@ constexpr void setOnceTaskQueue(T (&tasks)[N])
     */
 void schedule(void);
 
+
+void call(const size_t index);
+
+
 } //namespace schedule

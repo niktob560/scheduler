@@ -91,12 +91,12 @@ add_definitions("-std=gnu++11")
 include_directories(Include)
 
 add_avr_executable(
-   scheduler
+   schedulerexample
    Src/main.cpp Src/schedule.cpp Include/schedule.hpp
 )
 
 add_avr_library(
-   libscheduler
+   scheduler
    Src/main.cpp Src/schedule.cpp Include/schedule.hpp
 )
 

@@ -107,7 +107,7 @@ void addOnceTask(const struct Task task)
 }
 
 
-void scheduleAddTask(const struct Task task)
+void addTask(const struct Task task)
 {
 #ifdef TRY_SORT
 	for (uint16_t i = 0; i < scheduleQueueLen; i++)

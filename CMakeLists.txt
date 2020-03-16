@@ -88,6 +88,25 @@ add_definitions("-ffunction-sections")
 add_definitions("-c")
 add_definitions("-std=gnu++11")
 
+add_definitions("-Wextra")
+add_definitions("-Wpedantic")
+add_definitions("-Wcast-align")
+add_definitions("-Wcast-qual")
+add_definitions("-Wconversion")
+add_definitions("-Wctor-dtor-privacy")
+add_definitions("-Wduplicated-branches")
+add_definitions("-Wduplicated-cond")
+add_definitions("-Wextra-semi")
+add_definitions("-Wfloat-equal")
+add_definitions("-Wlogical-op")
+add_definitions("-Wnon-virtual-dtor")
+add_definitions("-Wold-style-cast")
+add_definitions("-Woverloaded-virtual")
+add_definitions("-Wredundant-decls")
+add_definitions("-Wsign-conversion")
+add_definitions("-Wsign-promo")
+
+
 include_directories(Include)
 
 add_avr_executable(

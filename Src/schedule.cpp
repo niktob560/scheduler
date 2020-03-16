@@ -8,7 +8,7 @@ struct Task tasksAdditOnce[scheduleAdditQueueOnceMaxLen]; 	//16 bytes
 uint8_t 	quantsElapsed;						//1 byte
 
 const struct Task	emptyTask = {0,0};
-bool idle = false;
+bool idle = true;
 
 uint16_t 	scheduleCounter,								//2  bytes
 			scheduleQueueLen,								//2  bytes
@@ -196,17 +196,17 @@ inline bool isIndexInMainLoop(const size_t index)
 
 inline bool isIndexInAddinQueue(const size_t index)
 {
-	return index >= scheduleQueueLen && index < scheduleAdditQueueLen + scheduleQueueMaxLen;
+	return index >= scheduleQueueLen && (index - scheduleQueueLen) < scheduleAdditQueueLen;
 }
 
 
 void call(const size_t index)
 {
 	void (*func)() = 0x00;
-	if(isIndexInMainLoop(scheduleCounter) && tasksMainLoop[index].quantsWanted != 0)								//get task from main loop
+	if(isIndexInMainLoop(scheduleCounter))								//get task from main loop
 		func = tasksMainLoop[index].func;
-	else if(isIndexInAddinQueue(scheduleCounter) && tasksAdditOnce[index - scheduleQueueMaxLen].quantsWanted != 0)	//get task from additional queue
-		func = tasksMainLoop[index - scheduleQueueMaxLen].func;
+	else if(isIndexInAddinQueue(scheduleCounter))						//get task from additional queue
+		func = tasksAdditOnce[index - scheduleQueueLen].func;
 	
 	if(idle && func != 0x00)		//if can call new task and task exists
 	{
@@ -218,40 +218,20 @@ void call(const size_t index)
 
 void schedule(void)
 {
-	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	if(idle)
 	{
-		if(isIndexInMainLoop(scheduleCounter))
+		call(scheduleCounter);
+		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 		{
-			//run task from main loop
-			if(idle && quantsElapsed >= tasksMainLoop[scheduleCounter].quantsWanted)
-			{
-				quantsElapsed = 0;
+			if(scheduleCounter + 1 < scheduleQueueMaxLen + scheduleAdditQueueOnceMaxLen)
 				scheduleCounter++;
-			}
 			else
-				quantsElapsed++;
-		}
-		else if(isIndexInAddinQueue(scheduleCounter))
-		{
-			//run task from once queue
-			if(idle && quantsElapsed >= tasksAdditOnce[scheduleCounter - scheduleQueueLen].quantsWanted)
 			{
-				quantsElapsed = 0;
-				scheduleCounter++;
+				scheduleCounter = 0;
+				scheduleAdditQueueLen = 0;
 			}
-			else
-				quantsElapsed++;
-		}
-		else if(idle)
-		{
-			//set counter to zero, flush additional once queue and run from start
-			scheduleCounter = 0;
-			quantsElapsed = 0;
-			scheduleAdditQueueLen = 0;
 		}
 	}
-	if(quantsElapsed == 0)
-		call(scheduleCounter);
 }
 
 } //namespace schedule

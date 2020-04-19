@@ -105,6 +105,11 @@ add_definitions("-Woverloaded-virtual")
 add_definitions("-Wredundant-decls")
 add_definitions("-Wsign-conversion")
 add_definitions("-Wsign-promo")
+add_definitions("-Wparentheses")
+add_definitions("-Wsequence-point")
+add_definitions("-Wreturn-type")
+add_definitions("-Wswitch")
+add_definitions("-Wuninitialized")
 
 
 include_directories(Include)
